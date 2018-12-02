@@ -2,7 +2,9 @@ package gui;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener; 
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -90,6 +92,12 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	String event;
 		event = in.getActionCommand();
 		if(event == "Open") {
+			try {
+				Runtime.getRuntime().exec("explorer.exe /select,"); //Opens file explorer on Windows  operating system
+			} catch (IOException e) {
+				System.out.print("incompatible operating system");
+				e.printStackTrace();
+			}
 			System.out.println("Open pressed");
 		} 
 		else if(event == "Export") {
