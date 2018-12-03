@@ -6,8 +6,11 @@ import java.awt.event.ActionListener; //added for possible future use
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.Border;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JComponent;
 import javax.swing.border.EmptyBorder;
  
@@ -47,8 +50,16 @@ public class MainInterface extends JPanel {
         return panel;
     }
 	private JComponent summarizeTab() {
-        JPanel panel = new JPanel(new BorderLayout());
+		JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(15,10,10,10));
+        JTextArea display = new JTextArea ( 5, 10 );
+        display.setText("When fully implemented I will display information on Opuses");
+        display.setEditable(false);
+        display.setWrapStyleWord(true);
+        panel.add(display);
+        JScrollPane scroll = new JScrollPane ( display );
+        scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
+        panel.add(scroll);
         
         return panel;
     }
