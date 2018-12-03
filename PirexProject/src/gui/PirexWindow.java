@@ -122,6 +122,14 @@ public class PirexWindow extends JFrame implements  ActionListener {
 			System.out.println("Index pressed");
 		}
 		else if(event == "About") {
+			ProcessBuilder AboutFile = new ProcessBuilder("Notepad.exe","About.txt"); //Opens About.txt file in Notepad on windows pc
+			
+			try {
+				AboutFile.start();
+			} catch (IOException e) {
+				System.out.println("Failure to open File");
+				e.printStackTrace();
+			}
 			System.out.println("About pressed");
 		}
 			
