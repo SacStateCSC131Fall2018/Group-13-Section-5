@@ -112,7 +112,7 @@ public class PirexWindow extends JFrame implements  ActionListener {
 		else if(event == "Load Query") {
 			System.out.println("Load Query pressed");
 		}
-		else if(event == "Exit") {
+		else if(event == "Exit") {                 //Exits the Program
 			System.exit(0);
 		}
 		else if(event == "Sources") {
