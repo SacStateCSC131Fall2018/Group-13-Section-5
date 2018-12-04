@@ -1,8 +1,9 @@
 package gui;
 
-import java.awt.*;
+//import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
@@ -26,7 +27,7 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	frame = new JFrame("Pirex");
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	
-    	ImageIcon img = new ImageIcon("D:/eclipse/eclipse-workspace/gitprojects/Group-13-Section-5/PirexProject/src/gui/pirex.png");
+    	ImageIcon img = new ImageIcon("PirexProject/src/gui/pirex.png");
         frame.setIconImage(img.getImage());
     	
         MainInterface main = new MainInterface();
@@ -122,6 +123,14 @@ public class PirexWindow extends JFrame implements  ActionListener {
 			System.out.println("Documents pressed");
 		}
 		else if(event == "Index") {
+			ProcessBuilder IndexFile = new ProcessBuilder("Notepad.exe","Index.txt"); 
+			
+			try {
+				IndexFile.start();
+			} catch (IOException e) {
+				System.out.println("Failure to open File");
+				e.printStackTrace();
+			}
 			System.out.println("Index pressed");
 		}
 		else if(event == "About") {
