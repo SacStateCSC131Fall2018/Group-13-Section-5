@@ -32,9 +32,10 @@ import javax.swing.SwingConstants;
 **/
 
 public class PirexWindow extends JFrame implements  ActionListener {
+
 	/** the long for the serial version UID.  **/
 	private static final long serialVersionUID = 14l;
-	/** the String that is saved when the user presses the "Save Query" **/
+    /** the String that is saved when the user presses the "Save Query" **/
 	private String savedQuery;
 	/** the MainInterface that is created using the MainInterface class **/
 	private MainInterface main;

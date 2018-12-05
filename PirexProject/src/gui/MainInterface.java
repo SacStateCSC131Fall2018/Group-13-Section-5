@@ -33,7 +33,7 @@ import javax.swing.border.EmptyBorder;
 **/
 
 public class MainInterface extends JPanel {
-	/**the long for the serial versions UID. **/
+
 	private static final long serialVersionUID = 14L;
 	/** the String for the user input that is used to search. **/
 	private String querySearch;
@@ -268,6 +268,7 @@ public class MainInterface extends JPanel {
      *  desired action depending on what is passed into this method.
      * 
      *  @param in	the ActionEvent that determines which action Pirex should perform.
+     *  @note		unsure if this method is currently required but added for possible future use.
     **/
 	/*public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
 		String event;
