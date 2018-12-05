@@ -1,6 +1,6 @@
 package gui;
 
-//import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Dimension;
@@ -33,6 +33,8 @@ import javax.swing.SwingConstants;
 **/
 
 public class PirexWindow extends JFrame implements  ActionListener {
+	
+	private static final long serialVersionUID = 14L;
 	
 	/** the String that is saved when the user presses the "Save Query" **/
 	private String savedQuery;

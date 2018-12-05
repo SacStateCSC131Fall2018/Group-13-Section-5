@@ -29,6 +29,8 @@ import javax.swing.border.EmptyBorder;
 **/
 
 public class MainInterface extends JPanel {
+	
+	private static final long serialVersionUID = 14L;
 	/** the String for the user input that is used to search. **/
 	private String querySearch;
 	/** the JTextField for the Query Input. **/
@@ -173,7 +175,7 @@ public class MainInterface extends JPanel {
         textFileType.setBorder(new EmptyBorder(0, 0, 0, 10));
         gutenberg.add(textFileType, BorderLayout.WEST);
         String[] allowedFiles = {"Project Gutenberg File", ".txt File"};
-        JComboBox dropDown = new JComboBox(allowedFiles );
+        JComboBox<String> dropDown = new JComboBox<>(allowedFiles );
         gutenberg.add(dropDown, BorderLayout.CENTER);
         
         JPanel titleAndAuthor = new JPanel(new BorderLayout());
@@ -247,10 +249,10 @@ public class MainInterface extends JPanel {
      * 
      *  @param in	the ActionEvent that determines which action Pirex should perform.
     **/
-	public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
+	/*public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
 		String event;
 		event = in.getActionCommand();					
-	}
+	}*/
 	
     /** EXPORT METHOD **/
     /**
