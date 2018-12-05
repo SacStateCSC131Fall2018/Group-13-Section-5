@@ -65,7 +65,7 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	/** Sets The Icon/Logo for Pirex**/
     	ImageIcon img = new ImageIcon("PirexProject/src/gui/pirex.png");
         frame.setIconImage(img.getImage());
-        
+      
     	/** Sets main equal to a new MainInterface**/
         main = new MainInterface();
         

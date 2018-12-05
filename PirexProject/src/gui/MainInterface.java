@@ -217,5 +217,4 @@ public class MainInterface extends JPanel {
 	
 		return querySearch;
 	}
-
 }
