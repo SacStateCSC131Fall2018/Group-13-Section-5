@@ -26,7 +26,7 @@ import javax.swing.border.EmptyBorder;
  * @author Johnathan Nelson Ento 
  * @author Joseph Libbon 
  * @author Ramiro Bazan
- * @version 1.4.0 03 December 2018
+ * @version 1.4.2 04 December 2018
 **/
 
 public class MainInterface extends JPanel {
@@ -114,8 +114,9 @@ public class MainInterface extends JPanel {
         			
         			querySearch = queryInput.getText();
         			
-        			midText.setText("I see that you are searching but the search function is not currently implemented yet \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Testing as needed scrollbar");
-        			bottomText.setText("I see that you are searching but the search function is not currently implemented yet ");
+        			midText.setText("I see that you are searching but the search function is not currently implemented yet "
+        					+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n You input: " + querySearch);
+        			bottomText.setText("I see that you are searching but the search function is not currently implemented yet.\n you Input: "+ querySearch);
         	}
         });
         
@@ -204,6 +205,17 @@ public class MainInterface extends JPanel {
 	public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
 		String event;
 		event = in.getActionCommand();					
+	}
+	public String export() {
+		return bottomText.getText();
+	}
+	public String getNameOfOpus() {
+		nameOfOpus = "testingFile";
+		return nameOfOpus;
+	}
+	public String getQuery() {
+	
+		return querySearch;
 	}
 
 }
