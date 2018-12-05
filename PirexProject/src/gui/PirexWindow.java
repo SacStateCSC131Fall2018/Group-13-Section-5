@@ -33,7 +33,10 @@ import javax.swing.SwingConstants;
 **/
 
 public class PirexWindow extends JFrame implements  ActionListener {
+	
+	/** the Strng that is saved when the user presses the "Save Query" **/
 	private String savedQuery;
+	/** the MainInterface that is created using the MainInterface class **/
 	private MainInterface main;
 	
 	 /**CONSTRUCTOR**/
@@ -79,56 +82,62 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	openMenuItem.addActionListener(this);	
     	fileMenu.add(openMenuItem);
     	
+    	/**Adds JMenuItem "Export" into JMenu "File"**/
     	JMenuItem exportMenuItem = new JMenuItem("Export");		
     	exportMenuItem.addActionListener(this);
     	fileMenu.add(exportMenuItem);
     	
+    	/** Adds JMenuItem "Save Query" into JMenu "File" **/
     	JMenuItem saveQueryMenuItem = new JMenuItem("Save Query");	//saves a search query
     	saveQueryMenuItem.addActionListener(this);
     	fileMenu.add(saveQueryMenuItem);
     	
+    	/** Adds JMenuItem "Load Query" into JMenu "File" **/
     	JMenuItem loadQueryMenuItem = new JMenuItem("Load Query");
     	loadQueryMenuItem.addActionListener(this);
     	fileMenu.add(loadQueryMenuItem);
     	
+    	/** Adds JMenuItem "Exit" into JMenu "File" **/
     	JMenuItem exitMenuItem = new JMenuItem("Exit");	//exits eclipse
     	exitMenuItem.addActionListener(this);
     	fileMenu.add(exitMenuItem);
     	
-    	
+    	/** Creates a Jmenu under the name "Options" and adds JMenuItem "Sources" **/
     	JMenu optionsMenu = new JMenu("Options");				//Options Drop down window
     	JMenuItem sourcesMenuItem = new JMenuItem("Sources");
     	sourcesMenuItem.addActionListener(this);
     	optionsMenu.add(sourcesMenuItem);
     	
+    	/** Adds JMenuItem "Documents" into JMenu "Options" **/
     	JMenuItem documentsMenuItem = new JMenuItem("Documents");
     	documentsMenuItem.addActionListener(this);
     	optionsMenu.add(documentsMenuItem);
     	
-    	
+    	/** Creates a Jmenu under the name "Help" and adds JMenuItem "Index" **/
     	JMenu helpMenu = new JMenu("Help");						//Help drop down window
     	JMenuItem indexMenuItem = new JMenuItem("Index");
     	indexMenuItem.addActionListener(this);
     	helpMenu.add(indexMenuItem);
     	
+    	/** Adds JMenuItem "About" into JMenu "Help" **/
     	JMenuItem aboutMenuItem = new JMenuItem("About");
     	aboutMenuItem.addActionListener(this);
     	helpMenu.add(aboutMenuItem);
     	
-    	
+    	/** This Adds "File", "Options", and "Help" into the menu bar of the Frame **/
     	menuBar.add(fileMenu);
     	menuBar.add(optionsMenu);
     	menuBar.add(helpMenu);
     	
+    	/** Sets the Dimensions for the frame and adds the Menu bar **/
     	frame.setPreferredSize(new Dimension(1080,720));
     	frame.setJMenuBar(menuBar);
     	
+    	/** Sets the window to be pack and sets its to be visible to users **/
     	frame.pack();
     	frame.setVisible(true);
-        
-        
-    	
     }
+    
     public void actionPerformed(ActionEvent in)
     {
     	String event;
