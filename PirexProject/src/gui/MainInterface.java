@@ -19,16 +19,22 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 /**
+ * The MainInterface class extends JPanel and creates the main interface for
+ * Pirex. Creates tabs such as "Search for Documents", "Load Documents", and 
+ * "Summarize Documents" which will have their own unique display to help the 
+ * user accomplish what it is they will to achieve while using pirex. 
  * 
  * @author Braden Gills 			(Bradengills@csus.edu)
  * @author Catherine Nguyen 		(Catherinenguyen@csus.edu)
  * @author Johnathan Nelson Ento 	(Johnathannelsonento@csus.edu)
  * @author Joseph Libbon 			(Jplibbon@csus.edu)
  * @author Ramiro Bazan				(Bazan@csus.edu)
- * @version 1.4.3 05 December 2018
+ * @version 1.4.3.1 05 December 2018
 **/
 
 public class MainInterface extends JPanel {
+	/**the long for the serial versions UID. **/
+	private static final long serialVersionUID = 14L;
 	/** the String for the user input that is used to search. **/
 	private String querySearch;
 	/** the JTextField for the Query Input. **/
@@ -46,7 +52,11 @@ public class MainInterface extends JPanel {
 	
 	/**CONSTRUCTOR**/
 	/** 
-	 * 
+	 * Constructor for MainInterface
+	 * This constructor will create a JPanel and set its dimensions of
+	 * to the borders to desired size. Also it creates tabs for the users 
+	 * to use, such as "Search for Documents", "Load Documents", and 
+	 * "Summarize Documents".
 	**/
 	public MainInterface() {
 		super(new GridLayout(1, 1));
@@ -69,8 +79,14 @@ public class MainInterface extends JPanel {
 		
 	}
     /**PRIVATE SEARCH_TAB METHOD **/
-    /**
-     *@return JComponent
+    /** 
+     * The searchTab method creates the components of the
+     * "Search for Documents" tab,  which will set its preferred 
+     * dimensions and give it a "Clear" button. This method gives 
+     * this tab an appealing display for the user's to help them use
+     * Pirex effectively.
+     *   
+     *@return JComponent	The components for the "Search for Documents" tab.
     **/
 	private JComponent searchTab() {
 		JPanel panel = new JPanel(new BorderLayout());
@@ -108,10 +124,7 @@ public class MainInterface extends JPanel {
         midText.setWrapStyleWord(true);
         midScroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED );
         midDisplay.add(midScroll);
-        
-        
-        
-        
+               
         panel.add(midDisplay);
         
         JPanel bottomDisplay = new JPanel();
@@ -144,7 +157,11 @@ public class MainInterface extends JPanel {
 	 */
     /**PRIVATE LOAD_TAB METHOD **/
     /**
-     *@return JComponent
+     * The loadTab method creates the components for the "Load Documents tab"
+     * and sets the preferred dimensions for the user's entry and the 
+     * user's desired output when they want to load a document. 
+     * 
+     *@return JComponent 	The components for the "Load Documents" tab. 
     **/
 	private JComponent loadTab() {
 		JPanel panel = new JPanel(false);
@@ -173,7 +190,7 @@ public class MainInterface extends JPanel {
         textFileType.setBorder(new EmptyBorder(0, 0, 0, 10));
         gutenberg.add(textFileType, BorderLayout.WEST);
         String[] allowedFiles = {"Project Gutenberg File", ".txt File"};
-        JComboBox dropDown = new JComboBox(allowedFiles );
+        JComboBox<String> dropDown = new JComboBox<>(allowedFiles );
         gutenberg.add(dropDown, BorderLayout.CENTER);
         
         JPanel titleAndAuthor = new JPanel(new BorderLayout());
@@ -223,7 +240,12 @@ public class MainInterface extends JPanel {
 	
     /**PRIVATE SUMMARIZE_TAB METHOD **/
     /**
-     *@return JComponent
+     * The summarizeTab method creates and returns the components needed
+     * for the "Summarize Documents" tab. This method will also set 
+     * the desired dimensions for the components and displays a set text 
+     * as a filler until this method is completely implemented. 
+     * 
+     *@return JComponent	The components for the "Summarize Documents" tab.
     **/
 	private JComponent summarizeTab() {
 		JPanel panel = new JPanel(new BorderLayout());
@@ -240,21 +262,21 @@ public class MainInterface extends JPanel {
         return panel;
     }
 	
-    /** ACTION_PERFORMED METHOD **/
-    /**
+    /* ACTION_PERFORMED METHOD **/
+    /*
      *  The actionPerformed method takes in an ActionEvent and performs the
      *  desired action depending on what is passed into this method.
      * 
      *  @param in	the ActionEvent that determines which action Pirex should perform.
     **/
-	public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
+	/*public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
 		String event;
 		event = in.getActionCommand();					
-	}
+	}*/
 	
     /** EXPORT METHOD **/
     /**
-      *@return String 
+      *@return String 	the String that the user wishes to export.
     **/
 	public String export() {
 		return bottomText.getText();
@@ -262,7 +284,7 @@ public class MainInterface extends JPanel {
 	
     /** GET_NAME_OF_OPUS METHOD **/
     /**
-      *@return String
+      *@return String	the String of the name of the opus. 
     **/
 	public String getNameOfOpus() {
 		nameOfOpus = "testingFile";
@@ -271,7 +293,8 @@ public class MainInterface extends JPanel {
 	
     /** GET_QUERY METHOD **/
     /**
-      *@return String
+     * 
+      *@return String	the String that the user enters for ther Search Query.
     **/
 	public String getQuery() {
 	

@@ -19,7 +19,7 @@ package gui;
  * @author Johnathan Nelson Ento 	(Johnathannelsonento@csus.edu)
  * @author Joseph Libbon 			(Jplibbon@csus.edu)
  * @author Ramiro Bazan				(Bazan@csus.edu)
- * @version 1.4.3 05 December 2018
+ * @version 1.4.3.1 05 December 2018
 **/
 
 public class Pirex 

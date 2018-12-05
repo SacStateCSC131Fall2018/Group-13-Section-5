@@ -1,6 +1,5 @@
 package gui;
 
-//import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Dimension;
@@ -29,11 +28,12 @@ import javax.swing.SwingConstants;
  * @author Johnathan Nelson Ento 	(Johnathannelsonento@csus.edu)
  * @author Joseph Libbon 			(Jplibbon@csus.edu)
  * @author Ramiro Bazan				(Bazan@csus.edu)
- * @version 1.4.3 05 December 2018
+ * @version 1.4.3.1 05 December 2018
 **/
 
 public class PirexWindow extends JFrame implements  ActionListener {
-	
+	/** the long for the serial version UID.  **/
+	private static final long serialVersionUID = 14l;
 	/** the String that is saved when the user presses the "Save Query" **/
 	private String savedQuery;
 	/** the MainInterface that is created using the MainInterface class **/
