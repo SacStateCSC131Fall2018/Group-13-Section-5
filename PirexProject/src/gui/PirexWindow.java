@@ -12,7 +12,22 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-
+/**
+ * The PirexWindow class extends JFrame and implements ActionListeners to 
+ * create a GUI that encompasses a menu bar, menu bar items , and actions 
+ * that go with these items to satisfy the needs of the stake holders. This 
+ * class will use a private method to create a new JFrame called frame, 
+ * giving it the display name of "Pirex", setting image icon for the GUI,
+ * and the JMenuBar along with its JMenuItems. This class also has a public 
+ * method that ... to be continued. 
+ * 
+ * @author Braden Gills
+ * @author Catherine Nguyen (catherinenguyen@csus.edu)
+ * @author Johnathan Nelson Ento 
+ * @author Joseph Libbon 
+ * @author Ramiro Bazan
+ * @version 1.2 03 December 2018
+**/
 
 public class PirexWindow extends JFrame implements  ActionListener {
 	
