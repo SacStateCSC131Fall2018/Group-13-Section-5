@@ -29,12 +29,19 @@ import javax.swing.border.EmptyBorder;
 **/
 
 public class MainInterface extends JPanel {
+	/** the String for the user input that is used to search. **/
 	private String querySearch;
+	/** the JTextField for the Query Input. **/
 	private JTextField queryInput;
+	/** the JTextArea for the text area in the middle. **/
 	private JTextArea midText;
+	/** the JTextArea for the text area for the bottom. **/
 	private JTextArea bottomText;
+	/** the String for the name of the opus. **/
 	private String nameOfOpus;
+	/** the JTextField for the text field for the user's entry. **/
 	private JTextField textEntry;
+	/** the JButton the button for process for the user to press. **/
 	private JButton process;
 	
 	/**CONSTRUCTOR**/
@@ -63,7 +70,7 @@ public class MainInterface extends JPanel {
 	}
     /**PRIVATE SEARCH_TAB METHOD **/
     /**
-     *
+     *@return JComponent
     **/
 	private JComponent searchTab() {
 		JPanel panel = new JPanel(new BorderLayout());
@@ -137,7 +144,7 @@ public class MainInterface extends JPanel {
 	 */
     /**PRIVATE LOAD_TAB METHOD **/
     /**
-     *
+     *@return JComponent
     **/
 	private JComponent loadTab() {
 		JPanel panel = new JPanel(false);
@@ -216,7 +223,7 @@ public class MainInterface extends JPanel {
 	
     /**PRIVATE SUMMARIZE_TAB METHOD **/
     /**
-     *
+     *@return JComponent
     **/
 	private JComponent summarizeTab() {
 		JPanel panel = new JPanel(new BorderLayout());
@@ -244,17 +251,38 @@ public class MainInterface extends JPanel {
 		String event;
 		event = in.getActionCommand();					
 	}
+	
+    /** EXPORT METHOD **/
+    /**
+      *@return String 
+    **/
 	public String export() {
 		return bottomText.getText();
 	}
+	
+    /** GET_NAME_OF_OPUS METHOD **/
+    /**
+      *@return String
+    **/
 	public String getNameOfOpus() {
 		nameOfOpus = "testingFile";
 		return nameOfOpus;
 	}
+	
+    /** GET_QUERY METHOD **/
+    /**
+      *@return String
+    **/
 	public String getQuery() {
 	
 		return querySearch;
 	}
+	
+    /** EXPORT METHOD **/
+    /**
+      *@param query		the String
+      *
+    **/
 	public void setQuery(String query) {
 		queryInput.setText(query);
 	}
