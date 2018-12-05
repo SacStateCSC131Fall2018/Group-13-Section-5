@@ -211,7 +211,9 @@ public class PirexWindow extends JFrame implements  ActionListener {
 	    	success.pack();
 	    	success.setVisible(true);
 		}
-		/** If the event is equal to "Load Query" Pirex will print "Load Query pressed" **/
+		/** If the event is equal to "Load Query", Pirex will load the query you saved and then it 
+		 * will create a JFrame that will print "Successfully loaded Query" to notify the user. 
+	    **/
 		else if(event == "Load Query") {
 			main.setQuery(savedQuery);
 			JFrame success = new JFrame();

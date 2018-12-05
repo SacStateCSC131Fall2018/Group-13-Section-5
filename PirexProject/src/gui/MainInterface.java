@@ -37,6 +37,10 @@ public class MainInterface extends JPanel {
 	private JTextField textEntry;
 	private JButton process;
 	
+	/**CONSTRUCTOR**/
+	/** 
+	 * 
+	**/
 	public MainInterface() {
 		super(new GridLayout(1, 1));
 		Border Border = new EmptyBorder(20,15,15,15);
@@ -57,6 +61,10 @@ public class MainInterface extends JPanel {
     	
 		
 	}
+    /**PRIVATE SEARCH_TAB METHOD **/
+    /**
+     *
+    **/
 	private JComponent searchTab() {
 		JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(15,10,10,10));
@@ -127,6 +135,10 @@ public class MainInterface extends JPanel {
 	/* Edited loadTap 12/04/18 @9:04pm
 	 * Version 1.4.0 Added Framework for Load Document Tab
 	 */
+    /**PRIVATE LOAD_TAB METHOD **/
+    /**
+     *
+    **/
 	private JComponent loadTab() {
 		JPanel panel = new JPanel(false);
         panel.setBorder(new EmptyBorder(15,10,10,10));
@@ -137,7 +149,7 @@ public class MainInterface extends JPanel {
         text.setBorder(new EmptyBorder(0,0,0,10));
         textFile.add(text, BorderLayout.WEST);
         textEntry = new JTextField(75);
-        textEntry.addActionListener(new ActionListener() {						// action listener for query input the method inside will activate on pressing ENTER key
+        textEntry.addActionListener(new ActionListener() {	// action listener for query input the method inside will activate on pressing ENTER key
         	public void actionPerformed(ActionEvent e) {
     			
     			process.setEnabled(true);
@@ -201,6 +213,11 @@ public class MainInterface extends JPanel {
         
         return panel;
     }
+	
+    /**PRIVATE SUMMARIZE_TAB METHOD **/
+    /**
+     *
+    **/
 	private JComponent summarizeTab() {
 		JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(15,10,10,10));
@@ -216,6 +233,13 @@ public class MainInterface extends JPanel {
         return panel;
     }
 	
+    /** ACTION_PERFORMED METHOD **/
+    /**
+     *  The actionPerformed method takes in an ActionEvent and performs the
+     *  desired action depending on what is passed into this method.
+     * 
+     *  @param in	the ActionEvent that determines which action Pirex should perform.
+    **/
 	public void actionPerformed(ActionEvent in) {  //unsure if this method is currently required but added for possible future use.
 		String event;
 		event = in.getActionCommand();					
