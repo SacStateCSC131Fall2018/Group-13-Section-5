@@ -187,7 +187,16 @@ public class PirexWindow extends JFrame implements  ActionListener {
 		
 		}
 		else if(event == "Load Query") {
-			System.out.println("Load Query pressed");
+			main.setQuery(savedQuery);
+			JFrame success = new JFrame();
+			success = new JFrame("Pirex");
+	    	success.setPreferredSize(new Dimension(200,100));
+	    	JLabel say = new JLabel();
+	    	say.setHorizontalAlignment(SwingConstants.CENTER);
+	        say.setText("Successfully loaded Query");
+	    	success.add(say);
+	    	success.pack();
+	    	success.setVisible(true);
 		}
 		else if(event == "Exit") {                 //Exits the Program
 			System.exit(0);

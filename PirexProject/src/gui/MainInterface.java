@@ -35,6 +35,8 @@ public class MainInterface extends JPanel {
 	private JTextArea midText;
 	private JTextArea bottomText;
 	private String nameOfOpus;
+	private JTextField textEntry;
+	private JButton process;
 	
 	public MainInterface() {
 		super(new GridLayout(1, 1));
@@ -135,7 +137,13 @@ public class MainInterface extends JPanel {
         JLabel text = new JLabel("Text File:");
         text.setBorder(new EmptyBorder(0,0,0,10));
         textFile.add(text, BorderLayout.WEST);
-        JTextField textEntry = new JTextField(75);
+        textEntry = new JTextField(75);
+        textEntry.addActionListener(new ActionListener() {						// action listener for query input the method inside will activate on pressing ENTER key
+        	public void actionPerformed(ActionEvent e) {
+    			
+    			process.setEnabled(true);
+        	}
+        });
         textFile.add(textEntry, BorderLayout.CENTER);
         JButton browse = new JButton("Browse");
         textFile.add(browse, BorderLayout.EAST);
@@ -175,7 +183,14 @@ public class MainInterface extends JPanel {
         JPanel bottom = new JPanel(new BorderLayout());
         bottom.setBorder(new EmptyBorder(20,10,10,10));
         JPanel processLine = new JPanel(new BorderLayout());
-        JButton process = new JButton("Process");
+        process = new JButton("Process");
+        process.setEnabled(false);
+        process.addActionListener(new ActionListener() {						
+        	public void actionPerformed(ActionEvent e) {
+    																//left blank until we have a way to test if the file is loaded or not
+    			
+    	}
+        });
         processLine.add(process, BorderLayout.WEST);
         bottom.add(processLine, BorderLayout.NORTH);
         JTextArea summaryDisplay = new JTextArea(23, 90);
@@ -216,5 +231,8 @@ public class MainInterface extends JPanel {
 	public String getQuery() {
 	
 		return querySearch;
+	}
+	public void setQuery(String query) {
+		queryInput.setText(query);
 	}
 }
