@@ -7,7 +7,8 @@ package gui;
  */
 
 
-public class Pirex {
+public class Pirex 
+{
 	/**
      * The entry point of the application
      *
@@ -17,11 +18,8 @@ public class Pirex {
     {
         PirexWindow         window;
         
-        
         window = new PirexWindow();
-        window.setTitle("Pirex");        
-        
-        
+        window.setTitle("Pirex");            
         
     }
 }
