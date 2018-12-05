@@ -304,7 +304,7 @@ public class MainInterface extends JPanel {
 	
     /** EXPORT METHOD **/
     /**
-      *@param query		the String
+      *@param query		the String for the set text of the query 
       *
     **/
 	public void setQuery(String query) {
