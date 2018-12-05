@@ -45,7 +45,7 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	exportMenuItem.addActionListener(this);
     	fileMenu.add(exportMenuItem);
     	
-    	JMenuItem saveQueryMenuItem = new JMenuItem("Save Query");	
+    	JMenuItem saveQueryMenuItem = new JMenuItem("Save Query");	//saves a search query
     	saveQueryMenuItem.addActionListener(this);
     	fileMenu.add(saveQueryMenuItem);
     	
@@ -53,7 +53,7 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	loadQueryMenuItem.addActionListener(this);
     	fileMenu.add(loadQueryMenuItem);
     	
-    	JMenuItem exitMenuItem = new JMenuItem("Exit");
+    	JMenuItem exitMenuItem = new JMenuItem("Exit");	//exits eclipse
     	exitMenuItem.addActionListener(this);
     	fileMenu.add(exitMenuItem);
     	
