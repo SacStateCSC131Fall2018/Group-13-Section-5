@@ -24,28 +24,28 @@ import javax.swing.SwingConstants;
  * and the JMenuBar along with its JMenuItems. This class also has a public 
  * method that allows the menu items to perform an action when activated.
  * 
- * @author Braden Gills
- * @author Catherine Nguyen (catherinenguyen@csus.edu)
- * @author Johnathan Nelson Ento 
- * @author Joseph Libbon 
- * @author Ramiro Bazan
- * @version 1.4.2 04 December 2018
+ * @author Braden Gills 			(Bradengills@csus.edu)
+ * @author Catherine Nguyen 		(Catherinenguyen@csus.edu)
+ * @author Johnathan Nelson Ento 	(Johnathannelsonento@csus.edu)
+ * @author Joseph Libbon 			(Jplibbon@csus.edu)
+ * @author Ramiro Bazan				(Bazan@csus.edu)
+ * @version 1.4.3 05 December 2018
 **/
 
 public class PirexWindow extends JFrame implements  ActionListener {
 	
-	/** the Strng that is saved when the user presses the "Save Query" **/
+	/** the String that is saved when the user presses the "Save Query" **/
 	private String savedQuery;
 	/** the MainInterface that is created using the MainInterface class **/
 	private MainInterface main;
 	
-	 /**CONSTRUCTOR**/
-	 /** 
+	/**CONSTRUCTOR**/
+	/** 
 	 *  Constructor for the PirexWindow.
 	 *  This constructor sets the component's locale property to be returned 
 	 *  by JComponent.getDefaultLocale. Also, this constructor calls the 
 	 *  private method setupLayout(). 
-	 **/
+	**/
     public PirexWindow()
     {
         super();
@@ -55,10 +55,11 @@ public class PirexWindow extends JFrame implements  ActionListener {
     /**
      * The setupLayout method sets the default close operations to exit on close. 
      * Similar to any web browser when a user presses the "close" button the program
-     * will close. This method sets the Icon to the preferred image. It then
-     * sets main equal to a new MainInterface and adds that main to the JFrame plus 
-     * a JmenuBar named menuBar. 
-     **/
+     * will close. This method sets the Icon to the preferred image. It also creates
+     * a menu bar, each having their own items and those items have action listeners. 
+     * Lastly, this method sets its preferred dimensions, sets it to be packed, and 
+     * makes sure its visible for users to see.
+    **/
     private void setupLayout() {
     	/** Creates JFrame("Pirex") named frame and sets default close operation to exit on close**/
     	JFrame frame;
@@ -138,10 +139,25 @@ public class PirexWindow extends JFrame implements  ActionListener {
     	frame.setVisible(true);
     }
     
+    /** ACTION_PERFORMED METHOD **/
+    /**
+     *  The actionPerformed method takes in an ActionEvent and performs the
+     *  desired action depending on what is passed into this method.
+     * 
+     *  @param in	the ActionEvent that determines which action Pirex should perform.
+    **/
     public void actionPerformed(ActionEvent in)
     {
+    	/** Declares a String event and sets it equal to the command string associated with this action. **/
     	String event;
 		event = in.getActionCommand();
+		
+		/** 
+		 * If the event is equal to "Open", Pirex will try to open file explorer on 
+		 * Windows Operating System and if it catches and exception Pirex will output 
+		 * "incompatible operating system". Lastly, Pirex will output "Open Pressed"
+		 * notifying to the user that it has been pressed.   
+	    **/
 		if(event == "Open") {
 			try {
 				Runtime.getRuntime().exec("explorer.exe /select,"); //Opens file explorer on Windows  operating system
@@ -151,6 +167,11 @@ public class PirexWindow extends JFrame implements  ActionListener {
 			}
 			System.out.println("Open pressed");
 		} 
+		/** If the event is equal to "Export", Pirex will create a text file with
+		 *  with the name of the opus from MainInterface. Also, Pirex will create
+		 *  a JFrame notifying the user that they have successfully save to that 
+		 *  certain text file.  
+		**/
 		else if(event == "Export") {
 			try {
 				File file = new File(main.getNameOfOpus() + ".txt");
@@ -171,8 +192,13 @@ public class PirexWindow extends JFrame implements  ActionListener {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
 		}
+		/** 
+		 * If the event is equal to "Save Query", Pirex will create a new JFrame, 
+		 * set its preferred dimensions, its alignment to be centered, 
+		 * text to say "Successfully saved Query", and for it all to be visible to the 
+		 * user. 
+		**/
 		else if(event == "Save Query") {
 			savedQuery = main.getQuery();
 			JFrame success = new JFrame();
@@ -184,20 +210,28 @@ public class PirexWindow extends JFrame implements  ActionListener {
 	    	success.add(say);
 	    	success.pack();
 	    	success.setVisible(true);
-		
 		}
+		/** If the event is equal to "Load Query" Pirex will print "Load Query pressed" **/
 		else if(event == "Load Query") {
 			System.out.println("Load Query pressed");
 		}
+		/** If the event is equal to "Exit" Pirex will exit itself **/
 		else if(event == "Exit") {                 //Exits the Program
 			System.exit(0);
 		}
+		/** If the event is equal to "Sources" Pirex will print "Sources pressed" **/
 		else if(event == "Sources") {
 			System.out.println("Sources pressed");
 		}
+		/** If the event is equal to "Documents" Pirex will print "Documents pressed" **/
 		else if(event == "Documents") {
 			System.out.println("Documents pressed");
 		}
+		/** If the event is equal to "Index", Pirex will open a Index.txt using
+		 * NotePad. Then it will try to start that file and if it catches an exception
+		 * Pirex will output "Failure to open File". Lastly, it will print "Index pressed"
+		 * to notify the user that it has been pressed.  
+	    **/
 		else if(event == "Index") {
 			ProcessBuilder IndexFile = new ProcessBuilder("Notepad.exe","Index.txt"); 
 			
@@ -209,6 +243,12 @@ public class PirexWindow extends JFrame implements  ActionListener {
 			}
 			System.out.println("Index pressed");
 		}
+		/** If the event is equal to "About", Pirex will open an About.txt file
+		 * in Notepad on windows PC. Then it will try to start the process and if
+		 * it fails it will catch an exception and output, "Failure to open File".
+		 * After, Pirex will output "About pressed" to notify the user that it has
+		 * been pressed.
+		**/
 		else if(event == "About") {
 			ProcessBuilder AboutFile = new ProcessBuilder("Notepad.exe","About.txt"); //Opens About.txt file in Notepad on windows pc
 			
@@ -220,6 +260,5 @@ public class PirexWindow extends JFrame implements  ActionListener {
 			}
 			System.out.println("About pressed");
 		}
-			
     }
 }

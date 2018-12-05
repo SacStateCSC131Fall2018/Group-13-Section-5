@@ -14,12 +14,12 @@ package gui;
  * We did not know that the professor shared a repository with us when we 
  * first committed a version to github.
  *  
- * @author Braden Gills
- * @author Catherine Nguyen (catherinenguyen@csus.edu)
- * @author Johnathan Nelson Ento 
- * @author Joseph Libbon 
- * @author Ramiro Bazan
- * @version 1.4.2 04 December 2018.
+ * @author Braden Gills 			(Bradengills@csus.edu)
+ * @author Catherine Nguyen 		(Catherinenguyen@csus.edu)
+ * @author Johnathan Nelson Ento 	(Johnathannelsonento@csus.edu)
+ * @author Joseph Libbon 			(Jplibbon@csus.edu)
+ * @author Ramiro Bazan				(Bazan@csus.edu)
+ * @version 1.4.3 05 December 2018
 **/
 
 public class Pirex 
