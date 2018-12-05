@@ -26,7 +26,7 @@ import javax.swing.border.EmptyBorder;
  * @author Johnathan Nelson Ento 
  * @author Joseph Libbon 
  * @author Ramiro Bazan
- * @version 1.4.2 04 December 2018
+ * @version 1.4.2 04 December 2018 ..
 **/
 
 public class MainInterface extends JPanel {

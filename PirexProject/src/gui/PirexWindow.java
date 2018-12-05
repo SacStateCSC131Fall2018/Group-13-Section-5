@@ -53,7 +53,7 @@ public class PirexWindow extends JFrame implements  ActionListener {
      * The setupLayout method sets the default close operations to exit on close. 
      * Similar to any web browser when a user presses the "close" button the program
      * will close. This method sets the Icon to the preferred image. It then
-     * creates a new MainInterface names main and adds that main to the JFrame plus 
+     * sets main equal to a new MainInterface and adds that main to the JFrame plus 
      * a JmenuBar named menuBar. 
      **/
     private void setupLayout() {
