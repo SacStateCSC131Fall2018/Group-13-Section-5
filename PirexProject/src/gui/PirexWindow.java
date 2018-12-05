@@ -33,8 +33,7 @@ import javax.swing.SwingConstants;
  * @version 1.4.1 03 December 2018
 **/
 
-public class PirexWindow extends JFrame implements  ActionListener 
-{
+public class PirexWindow extends JFrame implements  ActionListener {
 	private String savedQuery;
 	private MainInterface main;
 	
@@ -48,8 +47,7 @@ public class PirexWindow extends JFrame implements  ActionListener
         setupLayout();
     }
     
-    private void setupLayout() 
-    {
+    private void setupLayout() {
     	JFrame frame;
     	frame = new JFrame("Pirex");
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
