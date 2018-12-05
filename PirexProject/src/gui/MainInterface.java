@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
@@ -25,7 +26,7 @@ import javax.swing.border.EmptyBorder;
  * @author Johnathan Nelson Ento 
  * @author Joseph Libbon 
  * @author Ramiro Bazan
- * @version 1.2 03 December 2018
+ * @version 1.4.0 03 December 2018
 **/
 
 public class MainInterface extends JPanel {
@@ -120,9 +121,68 @@ public class MainInterface extends JPanel {
         
         return panel;
     }
+	
+	/* Edited loadTap 12/04/18 @9:04pm
+	 * Version 1.4.0 Added Framework for Load Document Tab
+	 */
 	private JComponent loadTab() {
-        JPanel panel = new JPanel(false);
+		JPanel panel = new JPanel(false);
         panel.setBorder(new EmptyBorder(15,10,10,10));
+        JPanel searchOptions = new JPanel(new BorderLayout());
+        
+        JPanel textFile = new JPanel(new BorderLayout()); // Load Documents > top line with Text File, text box, and browse
+        JLabel text = new JLabel("Text File:");
+        text.setBorder(new EmptyBorder(0,0,0,10));
+        textFile.add(text, BorderLayout.WEST);
+        JTextField textEntry = new JTextField(75);
+        textFile.add(textEntry, BorderLayout.CENTER);
+        JButton browse = new JButton("Browse");
+        textFile.add(browse, BorderLayout.EAST);
+        
+        
+        JPanel gutenberg = new JPanel(new BorderLayout()) ;	// Load Documents 2nd line with Text File Type: and drop down menu
+        gutenberg.setBorder(new EmptyBorder(20, 0, 0, 0));
+        JLabel textFileType = new JLabel("Text File Type:");
+        textFileType.setBorder(new EmptyBorder(0, 0, 0, 10));
+        gutenberg.add(textFileType, BorderLayout.WEST);
+        String[] allowedFiles = {"Project Gutenberg File", ".txt File"};
+        JComboBox dropDown = new JComboBox(allowedFiles );
+        gutenberg.add(dropDown, BorderLayout.CENTER);
+        
+        JPanel titleAndAuthor = new JPanel(new BorderLayout());
+        titleAndAuthor.setBorder(new EmptyBorder(20,0,0,0));
+        JPanel justTitle = new JPanel(new BorderLayout());
+        JLabel title = new JLabel("Title:");
+        title.setBorder(new EmptyBorder(0,0,0,10));
+        justTitle.add(title, BorderLayout.WEST);
+        JTextField titleDisplay = new JTextField(40);
+        justTitle.add(titleDisplay, BorderLayout.EAST);
+        JPanel justAuthor = new JPanel(new BorderLayout());
+        JLabel author = new JLabel("Author");
+        author.setBorder(new EmptyBorder(0,20,0,10));
+        justAuthor.add(author, BorderLayout.WEST);
+        JTextField authorDisplay = new JTextField(40);
+        justAuthor.add(authorDisplay, BorderLayout.EAST);
+        
+        titleAndAuthor.add(justAuthor, BorderLayout.EAST);
+        titleAndAuthor.add(justTitle, BorderLayout.WEST);
+        searchOptions.add(titleAndAuthor, BorderLayout.SOUTH);
+        searchOptions.add(textFile, BorderLayout.NORTH);
+        searchOptions.add(gutenberg, BorderLayout.CENTER);
+        panel.add(searchOptions, BorderLayout.NORTH);					// end of top section for load Documents page
+        
+        JPanel bottom = new JPanel(new BorderLayout());
+        bottom.setBorder(new EmptyBorder(20,10,10,10));
+        JPanel processLine = new JPanel(new BorderLayout());
+        JButton process = new JButton("Process");
+        processLine.add(process, BorderLayout.WEST);
+        bottom.add(processLine, BorderLayout.NORTH);
+        JTextArea summaryDisplay = new JTextArea(23, 90);
+        JScrollPane scroll = new JScrollPane ( summaryDisplay );
+        scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
+        bottom.add(summaryDisplay, BorderLayout.SOUTH);
+        bottom.add(scroll);
+        panel.add(bottom, BorderLayout.SOUTH);
         
         return panel;
     }

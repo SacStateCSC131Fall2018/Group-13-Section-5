@@ -31,6 +31,10 @@ import javax.swing.JMenuItem;
 
 public class PirexWindow extends JFrame implements  ActionListener {
 	
+	//CONSTRUCTOR//
+	/*
+	 * 
+	 */
     public PirexWindow()
     {
         super();
